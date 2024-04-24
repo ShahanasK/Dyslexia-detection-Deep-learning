@@ -1,0 +1,30 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+<form enctype="multipart/form-data" method="post" action="/parent_add_child_post">
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="textfield" /></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="textfield2" /></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="number" name="textfield3" /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input type="radio" name="radio" value="Male" />Male<br>
+                <input type="radio" name="radio" value="Female" />Female
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="ADD">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

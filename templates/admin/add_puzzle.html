@@ -1,0 +1,20 @@
+{% extends "admin/admin_index.html" %}
+{% block body %}
+<form enctype="multipart/form-data" method="post" action="/admin_add_puzzle_post">
+    <table border="1">
+        <tr>
+            <td>Puzzle Name</td>
+            <td><input type="text" name="textfield" /></td>
+        </tr>
+        <tr>
+            <td>Image</td>
+            <td><input type="file" name="filefield" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="ADD">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

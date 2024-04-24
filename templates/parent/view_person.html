@@ -1,0 +1,21 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+<table border="1" class="table">
+    <tr style="color: #ffffff; background: #000000">
+        <th>SL NO</th>
+        <th>NAME</th>
+        <th>IMAGE</th>
+        <th>RELATION</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['name'] }}</td>
+        <td><img src="{{ i['image'] }}" height="100" width="100" /></td>
+        <td>{{ i['relation'] }}</td>
+        <td><a href="/parent_delete_person/{{ i['person_id'] }}" class="btn btn-danger" onclick="return confirm('Are you sure');">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

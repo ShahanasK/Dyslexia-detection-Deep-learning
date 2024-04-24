@@ -1,0 +1,38 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+<table border="1" class="table" style="width: 500px" align="center">
+    <tr>
+        <td colspan="2">
+            <img src="{{ data['image'] }}" height="100" width="100">
+        </td>
+    </tr>
+    <tr>
+        <th>NAME</th>
+        <td>{{ data['name'] }}</td>
+    </tr>
+    <tr>
+        <th>EMAIL</th>
+        <td>{{ data['email'] }}</td>
+    </tr>
+    <tr>
+        <th>PHONE</th>
+        <td>{{ data['phone'] }}</td>
+    </tr>
+    <tr>
+        <th>HOUSE</th>
+        <td>{{ data['house'] }}</td>
+    </tr>
+    <tr>
+        <th>PLACE</th>
+        <td>{{ data['place'] }}</td>
+    </tr>
+    <tr>
+        <th>CITY</th>
+        <td>{{ data['city'] }}</td>
+    </tr>
+    <tr>
+        <th>STATE</th>
+        <td>{{ data['state'] }}</td>
+    </tr>
+</table>
+{% endblock %}

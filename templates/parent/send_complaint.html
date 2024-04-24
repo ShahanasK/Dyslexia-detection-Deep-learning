@@ -1,0 +1,16 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+<form enctype="multipart/form-data" method="post" action="/send_complaint_post">
+    <table border="1">
+        <tr>
+            <td>Complaint</td>
+            <td><textarea name="textfield" ></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="ADD">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

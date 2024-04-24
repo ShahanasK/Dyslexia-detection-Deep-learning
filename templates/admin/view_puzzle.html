@@ -1,0 +1,21 @@
+{% extends "admin/admin_index.html" %}
+{% block body %}
+<table border="1" class="table">
+    <tr style="color: #ffffff; background: #000000">
+        <th>SL NO</th>
+        <th>IMAGE</th>
+        <th>DATE</th>
+        <th>NAME</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td><img src="{{ i['image'] }}" height="100" width="100" /> </td>
+        <td>{{ i['date'] }}</td>
+        <td>{{ i['puzzle_name'] }}</td>
+        <td><a href="/admin_delete_puzzle/{{ i['puzzle_id'] }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

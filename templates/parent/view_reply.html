@@ -1,0 +1,21 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+<table border="1" class="table">
+    <tr style="color: #ffffff; background: #000000">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>COMPLAINT</th>
+        <th>REPLY</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['date'] }}</td>
+        <td>{{ i['complaint'] }}</td>
+        <td>{{ i['reply'] }}</td>
+        <td><a href="/parent_delete_complaint/{{ i['complaint_id'] }}" class="btn btn-danger" onclick="return confirm('Are you sure');">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

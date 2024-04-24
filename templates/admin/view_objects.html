@@ -1,0 +1,24 @@
+{% extends "admin/admin_index.html" %}
+{% block body %}
+<table border="1" class="table">
+    <tr style="color: #ffffff; background-color: #000000;">
+        <th>SL NO</th>
+        <th>IMAGE</th>
+        <th>NAME</th>
+        <th></th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td><img src="{{ i['image'] }}" height="100" width="100" /> </td>
+        <td>{{ i['object_name'] }}</td>
+        <td><a href="/admin_delete_object/{{ i['object_id'] }}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+    <style>
+    tr{
+         background-color: #000000;
+    }
+    </style>
+{% endblock %}

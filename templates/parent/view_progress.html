@@ -1,0 +1,28 @@
+{% extends "parent/parent_index.html" %}
+{% block body %}
+    <h3><b>Total Tests : </b>{{ tot }}</h3>
+    <h4><b>Normal count : </b>{{ norm_count }} ({{ norm_perc }}%)</h4>
+    <h4><b>Dyslexic Tests : </b>{{ dis_count }} ({{ dis_perc }}%)</h4>
+    <br><br>
+<table border="1" class="table">
+    <tr style="color: #ffffff; background: #000000">
+        <th>SL NO</th>
+        <th>DATE</th>
+        <th>TEST</th>
+        <th>RESULT</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['date'] }}</td>
+        <td>{{ i['test_type'] }}
+            {% if i['test_type'] != "Handwriting" %}
+                <br><b>Attended : {{ i['attended'] }}</b>
+                <br><b>Correct : {{ i['correct'] }}</b>
+            {% endif %}
+        </td>
+        <td>{{ i['prediction'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

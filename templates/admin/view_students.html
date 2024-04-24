@@ -1,0 +1,21 @@
+{% extends "admin/admin_index.html" %}
+{% block body %}
+<table border="1" class="table">
+    <tr style="color: #ffffff; background: #000000">
+        <th>SL NO</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>AGE</th>
+        <th>GENDER</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['name'] }}</td>
+        <td>{{ i['email'] }}</td>
+        <td>{{ i['age'] }}</td>
+        <td>{{ i['gender'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
